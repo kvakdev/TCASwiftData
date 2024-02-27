@@ -12,7 +12,10 @@ import ComposableArchitecture
 struct TCATestAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(store: Store(initialState: .init(), reducer: { AppFeature() }))
+//            ContentView(store: Store(initialState: .init(title: "App Hello World",
+//                                                         destination: .home(.init(selectedTab: .three))), reducer: { AppFeature() }))
+            ContentView(store: Store(initialState: .init(title: "App Hello World",
+                                                         destination: nil), reducer: { AppFeature() }))
         }
     }
 }

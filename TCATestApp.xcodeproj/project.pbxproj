@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2EFDF72B84C7D9001CB468 /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2EFDF62B84C7D9001CB468 /* HomeFeature.swift */; };
 		CEBD54442B83B57D008B43A6 /* TCATestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD54432B83B57D008B43A6 /* TCATestAppApp.swift */; };
 		CEBD54462B83B57D008B43A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD54452B83B57D008B43A6 /* ContentView.swift */; };
 		CEBD54482B83B581008B43A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBD54472B83B581008B43A6 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE2EFDF62B84C7D9001CB468 /* HomeFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 		CEBD54402B83B57D008B43A6 /* TCATestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCATestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBD54432B83B57D008B43A6 /* TCATestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCATestAppApp.swift; sourceTree = "<group>"; };
 		CEBD54452B83B57D008B43A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2EFDF52B84C7B4001CB468 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				CE2EFDF62B84C7D9001CB468 /* HomeFeature.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		CEBD54372B83B57D008B43A6 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +65,7 @@
 			children = (
 				CEBD54432B83B57D008B43A6 /* TCATestAppApp.swift */,
 				CEBD54452B83B57D008B43A6 /* ContentView.swift */,
+				CE2EFDF52B84C7B4001CB468 /* Features */,
 				CEBD54472B83B581008B43A6 /* Assets.xcassets */,
 				CEBD54492B83B581008B43A6 /* Preview Content */,
 			);
@@ -145,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2EFDF72B84C7D9001CB468 /* HomeFeature.swift in Sources */,
 				CEBD54462B83B57D008B43A6 /* ContentView.swift in Sources */,
 				CEBD54442B83B57D008B43A6 /* TCATestAppApp.swift in Sources */,
 			);
