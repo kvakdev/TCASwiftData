@@ -30,6 +30,102 @@
             endingLineNumber = "64"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "3E0EF2C5-0968-4771-B235-829FDBB0D976 - 3bf19805d62d0e4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (ComposableArchitecture.Store&lt;TCATestApp.AppFeature.Destination.State, ComposableArchitecture.PresentationAction&lt;TCATestApp.AppFeature.Destination.Action&gt;&gt;) -&gt; ComposableArchitecture.SwitchStore&lt;TCATestApp.AppFeature.Destination.State, ComposableArchitecture.PresentationAction&lt;TCATestApp.AppFeature.Destination.Action&gt;, TCATestApp.HomeFeatureView&gt; in TCATestApp.ContentView.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "3E0EF2C5-0968-4771-B235-829FDBB0D976 - 6b259b23bddb05f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (TCATestApp.AppFeature.Destination.State) -&gt; TCATestApp.HomeFeatureView in closure #1 (ComposableArchitecture.Store&lt;TCATestApp.AppFeature.Destination.State, ComposableArchitecture.PresentationAction&lt;TCATestApp.AppFeature.Destination.Action&gt;&gt;) -&gt; ComposableArchitecture.SwitchStore&lt;TCATestApp.AppFeature.Destination.State, ComposableArchitecture.PresentationAction&lt;TCATestApp.AppFeature.Destination.Action&gt;, TCATestApp.HomeFeatureView&gt; in TCATestApp.ContentView.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "252">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A31A4D5E-32F6-4E3E-8E5C-CCFC002EFCC6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TCATestApp/Dependencies/AppContainer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "liveValue"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A31A4D5E-32F6-4E3E-8E5C-CCFC002EFCC6 - 23d80cf1ab381664"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static SwiftData.ModelContainer.liveValue.getter : SwiftData.ModelContainer"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Dependencies/AppContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "A31A4D5E-32F6-4E3E-8E5C-CCFC002EFCC6 - 23d80cf1ab3815e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static SwiftData.ModelContainer.liveValue.getter : SwiftData.ModelContainer"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Dependencies/AppContainer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "888">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97740E82-3217-4F4A-BBBA-96CCC5CC16F4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TCATestApp/Dependencies/AppContainer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "liveValue"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -7,13 +7,17 @@
 
 import SwiftUI
 import ComposableArchitecture
+import SwiftData
 
 @main
 struct TCATestAppApp: App {
+    @Dependency(\.appContainer) var container: ModelContainer
+    
     var body: some Scene {
         WindowGroup {
             ContentView(store: Store(initialState: .init(title: "App Hello World",
                                                          destination: .home(.init(selectedTab: .three))), reducer: { AppFeature() }))
         }
+        .modelContainer(container)
     }
 }

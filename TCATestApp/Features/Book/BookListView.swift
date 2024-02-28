@@ -11,16 +11,26 @@ import ComposableArchitecture
 @Reducer
 struct BookListFeature {
     struct State: Equatable {
-        let books: [Book]
+        var books: [Book]
     }
     
-    enum Action {
+    enum Action: Equatable {
         case delete(IndexSet)
+        case delegate(Delegate)
+        
+        enum Delegate: Equatable {
+            case onDelete(IndexSet)
+        }
     }
     
     var body: some ReducerOf<Self> {
         Reduce { state, action in
-            return .none
+            switch action {
+            case .delegate:
+                return .none
+            case .delete(let indexSet):
+                return .send(.delegate(.onDelete(indexSet)))
+            }
         }
     }
 }

@@ -15,7 +15,7 @@ struct HomeFeature {
     @ObservableState
     struct State: Equatable {
         let tabs: [Tabs] = [.one, .two, .three]
-        
+        var booksContainerState: BookListContainerFeature.State = .init()
         var selectedTab: Tabs = .two
     }
     
@@ -27,6 +27,7 @@ struct HomeFeature {
     
     enum Action: Equatable {
         case selectedTabChanged(tab: Tabs)
+        case bookListContainer(BookListContainerFeature.Action)
     }
     
     var body: some ReducerOf<Self> {
@@ -43,9 +44,9 @@ struct HomeFeatureView: View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             TabView(selection: viewStore.binding(get: \.selectedTab,
                                                  send: { .selectedTabChanged(tab: $0) } )) {
-                Text("One")
+                BookListContainerView(store: store.scope(state: \.booksContainerState, action: \.bookListContainer))
                     .tag(HomeFeature.Tabs.one)
-                    .tabItem { Text("One") }
+                    .tabItem { Text("Books") }
                 Text("Two")
                     .tag(HomeFeature.Tabs.two)
                     .tabItem { Text("Two") }
