@@ -24,6 +24,11 @@ struct NewBookFeature {
         case binding(BindingAction<State>)
         case createButtonTapped
         case cancelButtonTapped
+        case delegate(Delegate)
+        
+        enum Delegate {
+            case didCreate
+        }
     }
     
     var body: some ReducerOf<Self> {
@@ -38,12 +43,18 @@ struct NewBookFeature {
                     await dismiss()
                 }
             case .createButtonTapped:
-                let newBook = Book(title: state.title, author: state.author)
-                
-                return .run { send in
+                return .run { [title = state.title, author = state.author] send in
+                    let newBook = Book(title: title, author: author)
                     let context = ModelContext(container)
                     context.insert(newBook)
+                    try! context.save()
+                    
+                    await send(.delegate(.didCreate))
+                    await dismiss()
                 }
+                
+            case .delegate(_):
+                return .none
             }
         }
     }

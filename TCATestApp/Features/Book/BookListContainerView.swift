@@ -27,7 +27,7 @@ struct BookListContainerFeature {
         var filterString: String = ""
         var books: [Book] = []
         var bookListState: BookListFeature.State = .init(books: [])
-//        @Presents var newBook: NewBookFeature.State?
+        @Presents var newBook: NewBookFeature.State?
     }
     
     enum Action: Equatable {
@@ -37,7 +37,7 @@ struct BookListContainerFeature {
         case booksFetched([Book])
         case fetchFailed
         case createButtonTapped
-//        case newBook(PresentationAction<NewBookFeature.Action>)
+        case newBook(PresentationAction<NewBookFeature.Action>)
     }
     
     var body: some ReducerOf<Self> {
@@ -83,22 +83,23 @@ struct BookListContainerFeature {
                 
                 return .none
             case .createButtonTapped:
-//                state.newBook = NewBookFeature.State()
+                state.newBook = NewBookFeature.State()
                 
                 return .none
-//            case .newBook(_):
-//                return .none
+            case .newBook(.presented(.delegate(.didCreate))):
+                
+                return .send(.onAppear)
+            case .newBook:
+           
+                return .none
             }
         }
         Scope(state: \.bookListState, action: \.bookList, child: {
             BookListFeature()
         })
-//        .ifLet(\.bookListState, action: \.bookList) {
-//            BookListFeature()
-//        }
-//        .ifLet(\.newBook, action: \.newBook) {
-//            NewBookFeature()
-//        }
+        .ifLet(\.$newBook, action: \.newBook) {
+            NewBookFeature()
+        }
         ._printChanges()
         
     }
@@ -115,7 +116,7 @@ struct BookListContainerView: View {
                     store.send(.onAppear)
                 }
                 
-        }        
+        }
         .toolbar(content: {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("Add book") {
@@ -123,9 +124,9 @@ struct BookListContainerView: View {
                 }
             }
         })
-//        .sheet(store: store.scope(state: \.$newBook, action: \.newBook)) { store in
-//            NewBookView(store: store)
-//        }
+        .sheet(store: store.scope(state: \.$newBook, action: \.newBook)) { store in
+            NewBookView(store: store)
+        }
         
     }
 }
