@@ -27,6 +27,7 @@ struct AppFeature {
         case destination(PresentationAction<Destination.Action>)
     }
     
+//  Valid option but property wrapper reduces the need for boilerplate code
 //    @Reducer
 //    struct Destination {
 //        enum State: Equatable {
@@ -71,12 +72,7 @@ struct ContentView: View {
         }
     }
 }
-//
-//#Preview {
-//    ContentView(store: Store(initialState: .init(title: "Preview Hello World",
-//                                                 destination: AppFeature.Destination.State.home(
-//                                                    HomeFeature.State()
-//                                                 )),
-//                             reducer: { AppFeature() }
-//                            ))
-//}
+
+#Preview {
+    Text("HI")
+}

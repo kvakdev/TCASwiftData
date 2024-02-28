@@ -57,6 +57,6 @@ struct HomeFeatureView: View {
     }
 }
 
-//#Preview {
-//    HomeFeatureView(store: Store(initialState: .init(), reducer: { HomeFeature() }))
-//}
+#Preview {
+    HomeFeatureView(store: Store(initialState: .init(), reducer: { HomeFeature() }))
+}
