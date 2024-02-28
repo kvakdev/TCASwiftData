@@ -20,6 +20,7 @@
 		CEF9E0A22B8E6CBA00F952F3 /* BookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9E0A12B8E6CBA00F952F3 /* BookListView.swift */; };
 		CEF9E0A42B8F408D00F952F3 /* BookListContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9E0A32B8F408D00F952F3 /* BookListContainerView.swift */; };
 		CEF9E0A92B8F445100F952F3 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9E0A82B8F445100F952F3 /* AppContainer.swift */; };
+		CEF9E0AB2B8FAE6500F952F3 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9E0AA2B8FAE6500F952F3 /* NewBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CEF9E0A12B8E6CBA00F952F3 /* BookListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListView.swift; sourceTree = "<group>"; };
 		CEF9E0A32B8F408D00F952F3 /* BookListContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListContainerView.swift; sourceTree = "<group>"; };
 		CEF9E0A82B8F445100F952F3 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		CEF9E0AA2B8FAE6500F952F3 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				CEF9E09B2B8E6A1A00F952F3 /* Quote.swift */,
 				CEF9E0A12B8E6CBA00F952F3 /* BookListView.swift */,
 				CEF9E0A32B8F408D00F952F3 /* BookListContainerView.swift */,
+				CEF9E0AA2B8FAE6500F952F3 /* NewBookView.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				CEF9E09A2B8E69F900F952F3 /* Book.swift in Sources */,
 				CE2EFDF72B84C7D9001CB468 /* HomeFeature.swift in Sources */,
+				CEF9E0AB2B8FAE6500F952F3 /* NewBookView.swift in Sources */,
 				CEF9E0A42B8F408D00F952F3 /* BookListContainerView.swift in Sources */,
 				CEBD54462B83B57D008B43A6 /* ContentView.swift in Sources */,
 				CEF9E09C2B8E6A1A00F952F3 /* Quote.swift in Sources */,

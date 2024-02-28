@@ -25,7 +25,7 @@ struct BookListContainerFeature {
     struct State: Equatable {
         var filterString: String = ""
         var books: [Book] = []
-        var bookListState: BookListFeature.State = .init(books: [])
+        var bookListState: BookListFeature.State?
     }
     
     enum Action: Equatable {
@@ -33,13 +33,10 @@ struct BookListContainerFeature {
         case bookList(BookListFeature.Action)
         case onAppear
         case booksFetched([Book])
+        case fetchFailed
     }
     
     var body: some ReducerOf<Self> {
-        Scope(state: \.bookListState, action: \.bookList) {
-            BookListFeature()
-        }
-        
         Reduce { state, action in
             switch action {
             case .sort:
@@ -47,7 +44,7 @@ struct BookListContainerFeature {
             case .bookList:
                 return .none
             case .booksFetched(let newBooks):
-                state.bookListState.books = newBooks
+                state.bookListState =  .init(books: newBooks)
                 
                 return .none
             case .onAppear:
@@ -68,11 +65,26 @@ struct BookListContainerFeature {
                         || filterString.isEmpty
                     }
                     let fetchedBooks = Query(filter: predicate, sort: sortDescriptors)
+                    let context = ModelContext(container)
+                    let descriptor = FetchDescriptor(predicate: predicate, sortBy: sortDescriptors)
                     
-                    await send(.booksFetched(fetchedBooks.wrappedValue))
+                    do {
+                        let result = try context.fetch(descriptor)
+                        await send(.booksFetched(result))
+                    } catch {
+                        await send(.fetchFailed)
+                    }
                 }
+            case .fetchFailed:
+                
+                return .none
             }
         }
+        .ifLet(\.bookListState, action: \.bookList) {
+            BookListFeature()
+        }
+        ._printChanges()
+        
     }
 }
 
@@ -80,10 +92,15 @@ struct BookListContainerView: View {
     @Bindable var store: StoreOf<BookListContainerFeature>
     
     var body: some View {
-        BookListView(store: store.scope(state: \.bookListState, action: \.bookList))
-            .onAppear {
-                store.send(.onAppear)
+        VStack {
+            IfLetStore(store.scope(state: \.bookListState, action: \.bookList)) { store in
+                BookListView(store: store)
             }
+            Text("Text")
+                .task {
+                    store.send(.onAppear)
+                }
+        }
     }
 }
 

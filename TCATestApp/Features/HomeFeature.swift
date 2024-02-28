@@ -31,9 +31,20 @@ struct HomeFeature {
     }
     
     var body: some ReducerOf<Self> {
-        Reduce { state, action in
-            return .none
+        Scope(state: \.booksContainerState, action: \.bookListContainer) {
+            BookListContainerFeature()
         }
+        
+        Reduce { state, action in
+            switch action {
+            case .selectedTabChanged(let tab):
+                state.selectedTab = tab
+                return .none
+            case .bookListContainer(let listAction):
+                return .none
+            }
+        }
+        ._printChanges()
     }
 }
 
@@ -44,9 +55,12 @@ struct HomeFeatureView: View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             TabView(selection: viewStore.binding(get: \.selectedTab,
                                                  send: { .selectedTabChanged(tab: $0) } )) {
-                BookListContainerView(store: store.scope(state: \.booksContainerState, action: \.bookListContainer))
-                    .tag(HomeFeature.Tabs.one)
-                    .tabItem { Text("Books") }
+                NavigationStack {
+                    BookListContainerView(store: store.scope(state: \.booksContainerState, action: \.bookListContainer))
+                }
+                .tag(HomeFeature.Tabs.one)
+                .tabItem { Text("Books") }
+                
                 Text("Two")
                     .tag(HomeFeature.Tabs.two)
                     .tabItem { Text("Two") }

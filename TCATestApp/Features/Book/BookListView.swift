@@ -37,6 +37,7 @@ struct BookListFeature {
 
 struct BookListView: View {
     let store: StoreOf<BookListFeature>
+    @State var createNewBook = false
     
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
@@ -74,6 +75,17 @@ struct BookListView: View {
                     }
                     .listStyle(.plain)
                 }
+            }
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add book") {
+                        createNewBook = true
+                    }
+                }
+            })
+            .sheet(isPresented: $createNewBook) {
+                NewBookView()
+                    .presentationDetents([.medium])
             }
         }
     }
