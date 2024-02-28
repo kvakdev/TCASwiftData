@@ -76,17 +76,6 @@ struct BookListView: View {
                     .listStyle(.plain)
                 }
             }
-            .toolbar(content: {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add book") {
-                        createNewBook = true
-                    }
-                }
-            })
-            .sheet(isPresented: $createNewBook) {
-                NewBookView()
-                    .presentationDetents([.medium])
-            }
         }
     }
 }

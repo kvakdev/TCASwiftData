@@ -22,10 +22,12 @@ enum SortOrder: String, Identifiable, CaseIterable {
 struct BookListContainerFeature {
     @Dependency(\.appContainer) var container
     
+    @ObservableState
     struct State: Equatable {
         var filterString: String = ""
         var books: [Book] = []
-        var bookListState: BookListFeature.State?
+        var bookListState: BookListFeature.State = .init(books: [])
+//        @Presents var newBook: NewBookFeature.State?
     }
     
     enum Action: Equatable {
@@ -34,6 +36,8 @@ struct BookListContainerFeature {
         case onAppear
         case booksFetched([Book])
         case fetchFailed
+        case createButtonTapped
+//        case newBook(PresentationAction<NewBookFeature.Action>)
     }
     
     var body: some ReducerOf<Self> {
@@ -64,7 +68,7 @@ struct BookListContainerFeature {
                         || book.author.localizedStandardContains(filterString)
                         || filterString.isEmpty
                     }
-                    let fetchedBooks = Query(filter: predicate, sort: sortDescriptors)
+                 
                     let context = ModelContext(container)
                     let descriptor = FetchDescriptor(predicate: predicate, sortBy: sortDescriptors)
                     
@@ -78,11 +82,23 @@ struct BookListContainerFeature {
             case .fetchFailed:
                 
                 return .none
+            case .createButtonTapped:
+//                state.newBook = NewBookFeature.State()
+                
+                return .none
+//            case .newBook(_):
+//                return .none
             }
         }
-        .ifLet(\.bookListState, action: \.bookList) {
+        Scope(state: \.bookListState, action: \.bookList, child: {
             BookListFeature()
-        }
+        })
+//        .ifLet(\.bookListState, action: \.bookList) {
+//            BookListFeature()
+//        }
+//        .ifLet(\.newBook, action: \.newBook) {
+//            NewBookFeature()
+//        }
         ._printChanges()
         
     }
@@ -92,15 +108,25 @@ struct BookListContainerView: View {
     @Bindable var store: StoreOf<BookListContainerFeature>
     
     var body: some View {
-        VStack {
-            IfLetStore(store.scope(state: \.bookListState, action: \.bookList)) { store in
-                BookListView(store: store)
-            }
-            Text("Text")
+        WithViewStore(store, observe: { $0 }) { viewStore in
+                BookListView(store: store.scope(state: \.bookListState,
+                                                action: \.bookList))
                 .task {
                     store.send(.onAppear)
                 }
-        }
+                
+        }        
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Add book") {
+                    store.send(.createButtonTapped)
+                }
+            }
+        })
+//        .sheet(store: store.scope(state: \.$newBook, action: \.newBook)) { store in
+//            NewBookView(store: store)
+//        }
+        
     }
 }
 
