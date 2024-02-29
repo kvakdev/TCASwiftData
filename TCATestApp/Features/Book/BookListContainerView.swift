@@ -21,6 +21,7 @@ enum SortOrder: String, Identifiable, CaseIterable {
 @Reducer
 struct BookListContainerFeature {
     @Dependency(\.appContainer) var container
+    @Dependency(\.modelContextClient) var contextClient
     
     @ObservableState
     struct State: Equatable {
@@ -45,6 +46,14 @@ struct BookListContainerFeature {
             switch action {
             case .sort:
                 return .none
+            case .bookList(.delegate(.onDelete(let books))):
+                return .run { send in
+                    let context = self.contextClient.context!
+                    for book in books {
+                        context.delete(book)
+                    }
+                    try? context.save()
+                }
             case .bookList:
                 return .none
             case .booksFetched(let newBooks):
@@ -69,7 +78,7 @@ struct BookListContainerFeature {
                         || filterString.isEmpty
                     }
                  
-                    let context = ModelContext(container)
+                    let context = contextClient.context!
                     let descriptor = FetchDescriptor(predicate: predicate, sortBy: sortDescriptors)
                     
                     do {

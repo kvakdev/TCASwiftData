@@ -19,7 +19,7 @@ struct BookListFeature {
         case delegate(Delegate)
         
         enum Delegate: Equatable {
-            case onDelete(IndexSet)
+            case onDelete([Book])
         }
     }
     
@@ -29,7 +29,14 @@ struct BookListFeature {
             case .delegate:
                 return .none
             case .delete(let indexSet):
-                return .send(.delegate(.onDelete(indexSet)))
+                var books: [Book] = []
+                for index in indexSet {
+                    let book = state.books[index]
+                    books.append(book)
+                }
+                state.books.remove(atOffsets: indexSet)
+                
+                return .send(.delegate(.onDelete(books)))
             }
         }
     }
