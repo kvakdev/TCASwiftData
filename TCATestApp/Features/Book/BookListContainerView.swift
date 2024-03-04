@@ -29,6 +29,8 @@ struct BookListContainerFeature {
         var books: [Book] = []
         var bookListState: BookListFeature.State = .init(books: [])
         @Presents var newBook: NewBookFeature.State?
+        
+        var path = StackState<BookListContainerFeature.Path.State>()
     }
     
     enum Action: Equatable {
@@ -39,6 +41,25 @@ struct BookListContainerFeature {
         case fetchFailed
         case createButtonTapped
         case newBook(PresentationAction<NewBookFeature.Action>)
+        case path(StackAction<Path.State, Path.Action>)
+    }
+    
+    @Reducer
+    struct Path {
+        @ObservableState
+        enum State: Equatable {
+            case editBook(EditBookFeature.State)
+        }
+        
+        enum Action: Equatable {
+            case editBook(EditBookFeature.Action)
+        }
+        
+        var body: some ReducerOf<Self> {
+            Reduce { state, action in
+                return .none
+            }
+        }
     }
     
     var body: some ReducerOf<Self> {
@@ -54,6 +75,10 @@ struct BookListContainerFeature {
                     }
                     try? context.save()
                 }
+            case .bookList(.delegate(.onBookTap(let book))):
+                state.path.append(.editBook(EditBookFeature.State(book: book)))
+                
+                return .none
             case .bookList:
                 return .none
             case .booksFetched(let newBooks):
@@ -101,6 +126,8 @@ struct BookListContainerFeature {
             case .newBook:
            
                 return .none
+            case .path:
+                return .none
             }
         }
         Scope(state: \.bookListState, action: \.bookList, child: {
@@ -108,6 +135,9 @@ struct BookListContainerFeature {
         })
         .ifLet(\.$newBook, action: \.newBook) {
             NewBookFeature()
+        }
+        .forEach(\.path, action: \.path) {
+            Path()
         }
         ._printChanges()
         
@@ -118,25 +148,36 @@ struct BookListContainerView: View {
     @Bindable var store: StoreOf<BookListContainerFeature>
     
     var body: some View {
-        WithViewStore(store, observe: { $0 }) { viewStore in
-                BookListView(store: store.scope(state: \.bookListState,
-                                                action: \.bookList))
-                .task {
-                    store.send(.onAppear)
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+            WithViewStore(store, observe: { $0 }) { viewStore in
+                    BookListView(store: store.scope(state: \.bookListState,
+                                                    action: \.bookList))
+                    .task {
+                        store.send(.onAppear)
+                    }
+                    
+            }
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add book") {
+                        store.send(.createButtonTapped)
+                    }
                 }
-                
-        }
-        .toolbar(content: {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button("Add book") {
-                    store.send(.createButtonTapped)
+            })
+            .sheet(store: store.scope(state: \.$newBook, action: \.newBook)) { store in
+                NewBookView(store: store)
+            }
+        } destination: { store in
+            SwitchStore(store) { initialState in
+                switch initialState {
+                case .editBook(let editState):
+                    EditBookView(store: Store(initialState: editState, reducer: {
+                        EditBookFeature()
+                    }))
                 }
             }
-        })
-        .sheet(store: store.scope(state: \.$newBook, action: \.newBook)) { store in
-            NewBookView(store: store)
+            
         }
-        
     }
 }
 
