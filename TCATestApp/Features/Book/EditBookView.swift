@@ -67,28 +67,29 @@ struct EditBookFeature {
     
     var body: some ReducerOf<Self> {
         BindingReducer()
-//            .onChange(of: viewStore.status) { oldValue, newValue in
-//                    if !firstView {
-//                        if newValue == .onShelf {
-//                            dateStarted = Date.distantPast
-//                            dateCompleted = Date.distantPast
-//                        } else if newValue == .inProgress && oldValue == .completed {
-//                            // from completed to inProgress
-//                            dateCompleted = Date.distantPast
-//                        } else if newValue == .inProgress && oldValue == .onShelf {
-//                            // Book has been started
-//                            dateStarted = Date.now
-//                        } else if newValue == .completed && oldValue == .onShelf {
-//                            // Forgot to start book
-//                            dateCompleted = Date.now
-//                            dateStarted = dateAdded
-//                        } else {
-//                            // completed
-//                            dateCompleted = Date.now
-//                        }
-//                        firstView = false
-//                    }
-//            }
+            .onChange(of: \.status) { oldValue, newValue in
+                Reduce { state, action in
+                    if newValue == .onShelf {
+                        state.dateStarted = Date.distantPast
+                        state.dateCompleted = Date.distantPast
+                    } else if newValue == .inProgress && oldValue == .completed {
+                        // from completed to inProgress
+                        state.dateCompleted = Date.distantPast
+                    } else if newValue == .inProgress && oldValue == .onShelf {
+                        // Book has been started
+                        state.dateStarted = Date.now
+                    } else if newValue == .completed && oldValue == .onShelf {
+                        // Forgot to start book
+                        state.dateCompleted = Date.now
+                        state.dateStarted = state.dateAdded
+                    } else {
+                        // completed
+                        state.dateCompleted = Date.now
+                    }
+                    return .none
+                }
+            }
+
         Reduce { state, action in
             switch action {
             case .updateButtonTapped:
