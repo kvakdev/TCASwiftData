@@ -92,10 +92,7 @@ struct EditBookFeature {
         Reduce { state, action in
             switch action {
             case .updateButtonTapped:
-                return .run { send in
-                    await send(.setNewValues)
-                    await send(.delegate(.completed))
-                }
+                return .send(.setNewValues).concatenate(with: .send(.delegate(.completed)))
                 
             case .binding:
                 return .none
