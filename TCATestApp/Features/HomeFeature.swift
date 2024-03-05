@@ -16,7 +16,7 @@ struct HomeFeature {
     struct State: Equatable {
         let tabs: [Tabs] = [.one, .two, .three]
         var booksContainerState: BookListContainerFeature.State = .init()
-        var selectedTab: Tabs = .two
+        var selectedTab: Tabs = .one
     }
     
     enum Tabs: Equatable {
@@ -56,8 +56,8 @@ struct HomeFeatureView: View {
             TabView(selection: viewStore.binding(get: \.selectedTab,
                                                  send: { .selectedTabChanged(tab: $0) } )) {
                 BookListContainerView(store: store.scope(state: \.booksContainerState, action: \.bookListContainer))
-                .tag(HomeFeature.Tabs.one)
-                .tabItem { Text("Books") }
+                    .tag(HomeFeature.Tabs.one)
+                    .tabItem { Text("Books") }
                 
                 Text("Two")
                     .tag(HomeFeature.Tabs.two)

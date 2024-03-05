@@ -15,9 +15,10 @@ struct BookListFeature {
     }
     
     enum Action: Equatable {
-        case delete(IndexSet)
+        case delete(Book)
         case delegate(Delegate)
         case tap(Tap)
+        case deleteConfirmed([Book])
         
         enum Delegate: Equatable {
             case onDelete([Book])
@@ -34,15 +35,22 @@ struct BookListFeature {
             switch action {
             case .delegate:
                 return .none
-            case .delete(let indexSet):
-                var books: [Book] = []
-                for index in indexSet {
-                    let book = state.books[index]
-                    books.append(book)
+            case .delete(let book):
+      
+                return .send(.delegate(.onDelete([book])))
+                
+            case .deleteConfirmed(let books):
+                var indexSet = IndexSet()
+                
+                for book in books {
+                    if let index = state.books.firstIndex(of: book) {
+                        indexSet.insert(index)
+                    }
                 }
                 state.books.remove(atOffsets: indexSet)
                 
-                return .send(.delegate(.onDelete(books)))
+                return .none
+                
             case .tap(let tap):
                 switch tap {
                 case .book(let book):
@@ -65,28 +73,38 @@ struct BookListView: View {
                 } else {
                     List {
                         ForEach(viewStore.books) { book in
-                            HStack(spacing: 10) {
-                                book.icon
-                                VStack(alignment: .leading) {
-                                    Text(book.title).font(.title2)
-                                    Text(book.author).foregroundStyle(.secondary)
-                                    if let rating = book.rating {
-                                        HStack {
-                                            ForEach(1..<rating, id: \.self) { _ in
-                                                Image(systemName: "star.fill")
-                                                    .imageScale(.small)
-                                                    .foregroundStyle(.yellow)
+                            HStack {
+                                HStack(spacing: 10) {
+                                    book.icon
+                                    VStack(alignment: .leading) {
+                                        Text(book.title).font(.title2)
+                                        Text(book.author).foregroundStyle(.secondary)
+                                        if let rating = book.rating {
+                                            HStack {
+                                                ForEach(1..<rating, id: \.self) { _ in
+                                                    Image(systemName: "star.fill")
+                                                        .imageScale(.small)
+                                                        .foregroundStyle(.yellow)
+                                                }
                                             }
                                         }
                                     }
+                                    Spacer()
+                                }
+                                .containerShape(.rect)
+                                .onTapGesture {
+                                    store.send(.tap(.book(book)))
+                                }
+                                
+                                Button {
+                                    store.send(.delete(book))
+                                } label: {
+                                    Image(systemName: "trash.fill")
+                                        .imageScale(.small)
+                                        .foregroundStyle(.black)
                                 }
                             }
-                            .onTapGesture {
-                                store.send(.tap(.book(book)))
-                            }
-                        }
-                        .onDelete { indexSet in
-                            store.send(.delete(indexSet))
+                            
                         }
                     }
                     .listStyle(.plain)

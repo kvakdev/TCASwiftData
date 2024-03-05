@@ -20,7 +20,6 @@ enum SortOrder: String, Identifiable, CaseIterable {
 
 @Reducer
 struct BookListContainerFeature {
-    @Dependency(\.appContainer) var container
     @Dependency(\.modelContextClient) var contextClient
     
     @ObservableState
@@ -29,6 +28,7 @@ struct BookListContainerFeature {
         var books: [Book] = []
         var bookListState: BookListFeature.State = .init(books: [])
         @Presents var newBook: NewBookFeature.State?
+        @Presents var deleteAlert: AlertState<Action.DeleteAction>?
         
         var path = StackState<Path.State>()
     }
@@ -42,6 +42,11 @@ struct BookListContainerFeature {
         case createButtonTapped
         case newBook(PresentationAction<NewBookFeature.Action>)
         case path(StackAction<Path.State, Path.Action>)
+        case deleteAction(PresentationAction<DeleteAction>)
+        
+        enum DeleteAction: Equatable {
+            case confirmDeletion([Book])
+        }
     }
     
     @Reducer
@@ -72,13 +77,14 @@ struct BookListContainerFeature {
             case .sort:
                 return .none
             case .bookList(.delegate(.onDelete(let books))):
-                return .run { send in
-                    let context = self.contextClient.context!
-                    for book in books {
-                        context.delete(book)
-                    }
-                    try? context.save()
-                }
+                state.deleteAlert = AlertState(
+                    title: { .init("DELETE THE BOOK") },
+                    actions: {
+                    ButtonState(role: .destructive, action: .confirmDeletion(books), label: { .init("Confirm")})
+                })
+                
+                return .none
+
             case .bookList(.delegate(.onBookTap(let book))):
                 state.path.append(.editBook(EditBookFeature.State(book: book)))
                 
@@ -130,11 +136,26 @@ struct BookListContainerFeature {
             case .newBook:
            
                 return .none
-            case let .path(.element(id: _, action: .editBook(.delegate(.completed)))):
+            case .path(.element(id: _, action: .editBook(.delegate(.completed)))):
                 state.path.removeLast()
                 
                 return .none
             case .path:
+                return .none
+                
+            case let .deleteAction(.presented(.confirmDeletion(books))):
+                return .run { send in
+                    let context = self.contextClient.context!
+                    for book in books {
+                        context.delete(book)
+                    }
+                    try? context.save()
+                    await send(.bookList(.deleteConfirmed(books)))
+                }
+                
+            case .deleteAction(.dismiss):
+                state.deleteAlert = nil
+                
                 return .none
             }
         }
@@ -144,6 +165,7 @@ struct BookListContainerFeature {
         .ifLet(\.$newBook, action: \.newBook) {
             NewBookFeature()
         }
+        .ifLet(\.$deleteAlert, action: \.deleteAction)
         ._printChanges()
         
     }
@@ -157,10 +179,6 @@ struct BookListContainerView: View {
             WithViewStore(store, observe: { $0 }) { viewStore in
                     BookListView(store: store.scope(state: \.bookListState,
                                                     action: \.bookList))
-                    .task {
-                        store.send(.onAppear)
-                    }
-                    
             }
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -172,6 +190,8 @@ struct BookListContainerView: View {
             .sheet(store: store.scope(state: \.$newBook, action: \.newBook)) { store in
                 NewBookView(store: store)
             }
+            .alert(store: store.scope(state: \.$deleteAlert, action: \.deleteAction))
+            
         } destination: { store in
             SwitchStore(store) { initialState in
                 switch initialState {
@@ -184,12 +204,18 @@ struct BookListContainerView: View {
             }
             
         }
+        .onAppear(perform: {
+            store.send(.onAppear)
+        })
     }
 }
 
 #Preview {
-    BookListContainerView(store: Store(initialState: .init(), reducer: {
+    let store = Store<BookListContainerFeature.State, BookListContainerFeature.Action>(initialState: BookListContainerFeature.State.init(), reducer: {
         BookListContainerFeature()
             ._printChanges()
-    }))
+    })
+    
+    return BookListContainerView(store: store)
+        .modelContainer(ModelContainer.previewValue)
 }
