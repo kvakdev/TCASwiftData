@@ -11,8 +11,9 @@ import ComposableArchitecture
 @Reducer
 struct EditBookFeature {
     @Dependency(\.dismiss) private var dismiss
+    @Dependency(\.modelContextClient) private var contextClient
     
-    struct State: Equatable {
+    struct State: Equatable, Hashable {
         let book: Book
         @BindingState var status = Status.onShelf
         @BindingState var rating: Int?
@@ -57,6 +58,11 @@ struct EditBookFeature {
         case updateButtonTapped
         case setNewValues
         case dismiss
+        case delegate(Delegate)
+        
+        enum Delegate {
+            case completed
+        }
     }
     
     var body: some ReducerOf<Self> {
@@ -86,10 +92,14 @@ struct EditBookFeature {
         Reduce { state, action in
             switch action {
             case .updateButtonTapped:
-                return .send(.setNewValues).concatenate(with: .send(.dismiss))
+                return .run { send in
+                    await send(.setNewValues)
+                    await send(.delegate(.completed))
+                }
                 
             case .binding:
                 return .none
+                
             case .setNewValues:
                 state.book.status = state.status.rawValue
                 state.book.rating = state.rating
@@ -101,13 +111,18 @@ struct EditBookFeature {
                 state.book.dateCompleted = state.dateCompleted
                 state.book.recommendedBy = state.recommendedBy
                 
+                try! contextClient.context.save()
+                
                 return .none
             case .dismiss:
                 return .run { send in
                     await dismiss()
                 }
+            case .delegate(_):
+                return .none
             }
         }
+        ._printChanges()
     }
 }
 

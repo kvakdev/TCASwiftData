@@ -26,10 +26,42 @@
             filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "A3CD8C6C-D9C9-4DAB-BA3F-231FE4D2C6FB - 42adec890dc44314"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "1000">
+               </Location>
+               <Location
+                  uuid = "A3CD8C6C-D9C9-4DAB-BA3F-231FE4D2C6FB - 9b04da468e8c9d36"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "1036">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,24 +74,56 @@
             filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "EDD892DF-E192-4377-8C11-7EE155919216 - 42adec890dc44352"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "968">
+               </Location>
+               <Location
+                  uuid = "EDD892DF-E192-4377-8C11-7EE155919216 - 9b04da468e8c9d70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "1000">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D65BB1BC-1E55-4920-A643-E5795D52836B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -108,23 +172,52 @@
                   endingLineNumber = "64"
                   offsetFromSymbolStart = "164">
                </Location>
+               <Location
+                  uuid = "D65BB1BC-1E55-4920-A643-E5795D52836B - d3dc30040b54f6bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "1136">
+               </Location>
+               <Location
+                  uuid = "D65BB1BC-1E55-4920-A643-E5795D52836B - b2c2de899b9f7add"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #1 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  uuid = "D65BB1BC-1E55-4920-A643-E5795D52836B - 223e71ab6eab96b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #1 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "164">
+               </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3F2073EC-50A7-4CE6-8993-F02C5D11848D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -323,54 +416,69 @@
             filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "BC06AC88-D2BB-430C-8DD4-A4858467EF58 - 223e71ab6eab979a"
+                  uuid = "BC06AC88-D2BB-430C-8DD4-A4858467EF58 - 223e71ab6eab939b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #1 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #3 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
                   moduleName = "TCATestApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "656">
+               </Location>
+               <Location
+                  uuid = "BC06AC88-D2BB-430C-8DD4-A4858467EF58 - 223e71ab6eab93e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
                   offsetFromSymbolStart = "848">
                </Location>
                <Location
-                  uuid = "BC06AC88-D2BB-430C-8DD4-A4858467EF58 - 4972b1703e2af5bb"
+                  uuid = "BC06AC88-D2BB-430C-8DD4-A4858467EF58 - 4972b1703e2af1c4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(2) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #1 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  symbolName = "(2) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
                   moduleName = "TCATestApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
                   offsetFromSymbolStart = "52">
                </Location>
                <Location
-                  uuid = "BC06AC88-D2BB-430C-8DD4-A4858467EF58 - d0a6f138cfadd358"
+                  uuid = "BC06AC88-D2BB-430C-8DD4-A4858467EF58 - d0a6f138cfadd727"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #1 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
                   moduleName = "TCATestApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
                   offsetFromSymbolStart = "92">
                </Location>
             </Locations>
@@ -386,54 +494,69 @@
             filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "18B3C612-16CC-4EE5-B870-32627F29B44D - 223e71ab6eab9758"
+                  uuid = "18B3C612-16CC-4EE5-B870-32627F29B44D - 223e71ab6eab939b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #1 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #3 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
                   moduleName = "TCATestApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "656">
+               </Location>
+               <Location
+                  uuid = "18B3C612-16CC-4EE5-B870-32627F29B44D - 223e71ab6eab939b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
                   offsetFromSymbolStart = "1032">
                </Location>
                <Location
-                  uuid = "18B3C612-16CC-4EE5-B870-32627F29B44D - 7fdb36819f2d31bb"
+                  uuid = "18B3C612-16CC-4EE5-B870-32627F29B44D - 7fdb36819f2d3578"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #1 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  symbolName = "(4) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
                   moduleName = "TCATestApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
                   offsetFromSymbolStart = "52">
                </Location>
                <Location
-                  uuid = "18B3C612-16CC-4EE5-B870-32627F29B44D - 870f76462cac1fdc"
+                  uuid = "18B3C612-16CC-4EE5-B870-32627F29B44D - 870f76462cac1b1f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #1 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  symbolName = "(5) suspend resume partial function for closure #2 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
                   moduleName = "TCATestApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "88"
-                  endingLineNumber = "88"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
                   offsetFromSymbolStart = "92">
                </Location>
             </Locations>
@@ -483,6 +606,196 @@
                   startingLineNumber = "39"
                   endingLineNumber = "39"
                   offsetFromSymbolStart = "584">
+               </Location>
+               <Location
+                  uuid = "E920F792-89F8-446F-9C25-F79567EF3363 - a5c9fe3d64bea27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout TCATestApp.BookListFeature.State, TCATestApp.BookListFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListFeature.Action&gt; in TCATestApp.BookListFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "660">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F3BC95B-A836-47D5-BD64-D593CC3A1B89"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0F3BC95B-A836-47D5-BD64-D593CC3A1B89 - 42adec890dc44543"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "1712">
+               </Location>
+               <Location
+                  uuid = "0F3BC95B-A836-47D5-BD64-D593CC3A1B89 - 9b04da468e8c9b63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "1924">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65D483B2-EC58-4B3A-8D0A-F6FCCAE57A86"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "65D483B2-EC58-4B3A-8D0A-F6FCCAE57A86 - 42adec890dc444c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "139"
+                  endingLineNumber = "139"
+                  offsetFromSymbolStart = "2000">
+               </Location>
+               <Location
+                  uuid = "65D483B2-EC58-4B3A-8D0A-F6FCCAE57A86 - 9b04da468e8c9ae7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "2056">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1ECC2610-8627-43A4-B5CE-3A6188002590"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19A17553-0545-4701-9762-6F9004CCCB67"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TCATestApp/Features/Book/BookListContainerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "19A17553-0545-4701-9762-6F9004CCCB67 - 223e71ab6eab97e4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #3 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "636">
+               </Location>
+               <Location
+                  uuid = "19A17553-0545-4701-9762-6F9004CCCB67 - 223e71ab6eab9805"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable (ComposableArchitecture.Send&lt;TCATestApp.BookListContainerFeature.Action&gt;) async -&gt; () in closure #3 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "584">
+               </Location>
+               <Location
+                  uuid = "19A17553-0545-4701-9762-6F9004CCCB67 - 9b04da468e8c920c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (inout TCATestApp.BookListContainerFeature.State, TCATestApp.BookListContainerFeature.Action) -&gt; ComposableArchitecture.Effect&lt;TCATestApp.BookListContainerFeature.Action&gt; in TCATestApp.BookListContainerFeature.body.getter : some"
+                  moduleName = "TCATestApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Education/PointFree/TCATestApp/TCATestApp/Features/Book/BookListContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "856">
                </Location>
             </Locations>
          </BreakpointContent>

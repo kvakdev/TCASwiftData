@@ -55,9 +55,7 @@ struct HomeFeatureView: View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             TabView(selection: viewStore.binding(get: \.selectedTab,
                                                  send: { .selectedTabChanged(tab: $0) } )) {
-                NavigationStack {
-                    BookListContainerView(store: store.scope(state: \.booksContainerState, action: \.bookListContainer))
-                }
+                BookListContainerView(store: store.scope(state: \.booksContainerState, action: \.bookListContainer))
                 .tag(HomeFeature.Tabs.one)
                 .tabItem { Text("Books") }
                 

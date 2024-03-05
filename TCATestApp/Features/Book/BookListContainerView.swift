@@ -30,7 +30,7 @@ struct BookListContainerFeature {
         var bookListState: BookListFeature.State = .init(books: [])
         @Presents var newBook: NewBookFeature.State?
         
-        var path = StackState<BookListContainerFeature.Path.State>()
+        var path = StackState<Path.State>()
     }
     
     enum Action: Equatable {
@@ -47,7 +47,7 @@ struct BookListContainerFeature {
     @Reducer
     struct Path {
         @ObservableState
-        enum State: Equatable {
+        enum State: Equatable, Hashable {
             case editBook(EditBookFeature.State)
         }
         
@@ -56,13 +56,17 @@ struct BookListContainerFeature {
         }
         
         var body: some ReducerOf<Self> {
-            Reduce { state, action in
-                return .none
+            Scope(state: /State.editBook, action: /Action.editBook) {
+                EditBookFeature()
             }
         }
     }
     
     var body: some ReducerOf<Self> {
+        Scope(state: \.bookListState, action: \.bookList, child: {
+            BookListFeature()
+        })
+        
         Reduce { state, action in
             switch action {
             case .sort:
@@ -126,18 +130,19 @@ struct BookListContainerFeature {
             case .newBook:
            
                 return .none
+            case let .path(.element(id: _, action: .editBook(.delegate(.completed)))):
+                state.path.removeLast()
+                
+                return .none
             case .path:
                 return .none
             }
         }
-        Scope(state: \.bookListState, action: \.bookList, child: {
-            BookListFeature()
-        })
+        .forEach(\.path, action: /Action.path) {
+            Path()
+        }
         .ifLet(\.$newBook, action: \.newBook) {
             NewBookFeature()
-        }
-        .forEach(\.path, action: \.path) {
-            Path()
         }
         ._printChanges()
         
@@ -145,10 +150,10 @@ struct BookListContainerFeature {
 }
 
 struct BookListContainerView: View {
-    @Bindable var store: StoreOf<BookListContainerFeature>
+    let store: StoreOf<BookListContainerFeature>
     
     var body: some View {
-        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+        NavigationStackStore(self.store.scope(state: \.path, action: \.path)) {
             WithViewStore(store, observe: { $0 }) { viewStore in
                     BookListView(store: store.scope(state: \.bookListState,
                                                     action: \.bookList))
@@ -170,10 +175,11 @@ struct BookListContainerView: View {
         } destination: { store in
             SwitchStore(store) { initialState in
                 switch initialState {
-                case .editBook(let editState):
-                    EditBookView(store: Store(initialState: editState, reducer: {
-                        EditBookFeature()
-                    }))
+                case .editBook:
+                    CaseLet(/BookListContainerFeature.Path.State.editBook,
+                            action: BookListContainerFeature.Path.Action.editBook) { store in
+                        EditBookView(store: store)
+                    }
                 }
             }
             
