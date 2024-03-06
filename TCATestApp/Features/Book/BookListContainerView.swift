@@ -180,6 +180,8 @@ struct BookListContainerView: View {
                     BookListView(store: store.scope(state: \.bookListState,
                                                     action: \.bookList))
             }
+            .navigationTitle("Books")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add book") {
@@ -189,6 +191,7 @@ struct BookListContainerView: View {
             })
             .sheet(store: store.scope(state: \.$newBook, action: \.newBook)) { store in
                 NewBookView(store: store)
+                    .presentationDetents([.medium])
             }
             .alert(store: store.scope(state: \.$deleteAlert, action: \.deleteAction))
             
