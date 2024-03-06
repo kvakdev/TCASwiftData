@@ -91,7 +91,7 @@ struct BookListView: View {
                                     }
                                     Spacer()
                                 }
-                                .containerShape(.rect)
+                                .contentShape(Rectangle())
                                 .onTapGesture {
                                     store.send(.tap(.book(book)))
                                 }
@@ -102,9 +102,9 @@ struct BookListView: View {
                                     Image(systemName: "trash.fill")
                                         .imageScale(.small)
                                         .foregroundStyle(.black)
+                                        .frame(width: 60)
                                 }
                             }
-                            
                         }
                     }
                     .listStyle(.plain)
