@@ -212,10 +212,11 @@ struct BookListContainerView: View {
 
 #Preview {
     let store = Store<BookListContainerFeature.State, BookListContainerFeature.Action>(initialState: BookListContainerFeature.State.init(), reducer: {
-        BookListContainerFeature()
-            ._printChanges()
+            BookListContainerFeature()
+                ._printChanges()
+    }, withDependencies: {
+        $0.appContainer = .previewValue
     })
     
     return BookListContainerView(store: store)
-        .modelContainer(ModelContainer.previewValue)
 }

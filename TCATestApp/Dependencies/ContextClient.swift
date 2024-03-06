@@ -21,6 +21,7 @@ class ContextClient {
 
 extension ContextClient: DependencyKey {
     static var liveValue: ContextClient = ContextClient()
+    static var previewValue: ContextClient = ContextClient()
 }
 
 extension DependencyValues {
